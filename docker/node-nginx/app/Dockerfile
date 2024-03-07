@@ -4,7 +4,8 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN npm i
+RUN rm -rf node_modules
+RUN npm ci
 
 ENV DOCKERIZE_VERSION v0.7.0
 RUN apt-get update \
