@@ -1,11 +1,11 @@
 FROM node:20 AS builder
 
+RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY . .
 
-RUN rm -rf node_modules
-RUN npm ci
+RUN npm install
 
 ENV DOCKERIZE_VERSION v0.7.0
 RUN apt-get update \
